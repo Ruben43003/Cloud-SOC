@@ -38,7 +38,7 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 ## Metrics Before Hardening / Security Controls
 
-The following table shows the metrics we measured in our insecure environment for 24 hours:
+The following table shows the metrics we measured in the insecure environment for 24 hours:
 Start Time 2023-05-01T00:14:15
 Stop Time 2023-05-02T00:14:15
 
@@ -56,7 +56,7 @@ Stop Time 2023-05-02T00:14:15
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
+The following table shows the metrics we measured in the environment for another 24 hours, but after we have applied security controls:
 Start Time 2023-05-02T15:55:05
 Stop Time	2023-05-03T15:55:05
 
@@ -73,11 +73,11 @@ Stop Time	2023-05-03T15:55:05
 
 While constructing the Azure CLoud and developing KQL queries I though it would be helpful to test out a possible real world scenario, create a KQL to detect the threat, and explain how I as a Security Proffessional would respond. 
 
-Scenario: Mr.Robinson is the head of the sales department at the prestigous law firm "Nelson and Murdock". It is an unfortunate tuesday afternoon and the company has decided that employee John Doe will be fired next week, as he has not been up to par with company policy. An employe who was present during the meeting happens to be a friend of John's and informs him. John is furious and researches ways to get his revenge. The next day John waits for Mr.Robinson to go out for his daily coffee run at 10am. Mr.Robinson leaves his desktop unlocked and walks out of his office to go grab coffee which will take him abiout 20 minutes. John sneaks into the office and disables Mr.Robsinsons firewall which will allow ICMP traffic and allow John to "ping of death" Mr.Robinsons device later that night. 
+Scenario: Mr.Robinson is the head of the sales department at the prestigous law firm "Nelson and Murdock". It is an unfortunate tuesday afternoon and the company has decided that employee John Doe will be fired next week, as he has not been up to par with company policy. An employee who was present during the meeting also happens to be a friend of John's and informs him . John is furious and researches ways to get his revenge. The next day John waits for Mr.Robinson to go out for his daily coffee run at 10am. Mr.Robinson leaves his desktop unlocked and walks out of his office to go grab coffee which will take him a total of about 20 minutes. John sneaks into the office and disables Mr.Robsinsons firewall which will allow ICMP traffic, and allow John to "ping of death" Mr.Robinsons device later that night. 
 
 Response utilizing NIST 800-61: 
 
-Preperation: Using the guidelines of NIST 800-61 Incident response I have already thought about the threat before it has occured as I follow the preparation phase and use my existing knowledge to think like a bad guy. I have an active query which spins up a high threat security incident whenever a users firewalls are turned on/off. 
+Preperation: Using the guidelines of NIST 800-61 Incident response I have already thought about the threat before it occured as I followed the preparation phase and use my existing knowledge of security threats to "think like a bad guy:. I have an active query which spins up a high threat security incident whenever a users firewalls are turned on/off. 
 
 Indentifcation and Containment/Eradication: I would recieve the alert on the SIEM solution in place and immediatley react by remoting into MR.Robinsons device and locking it. I would then follow this by removing his device off the network and inspecting if there was any malware or data breach on his device. Once I have verified that it was only the firewall turned off I simply turn it back on and check the cameras for the time that the incident occured. Here I am able to confirm the attacker was in fact John Doe and my supervisors as well as the authorities are informed immediatley. 
 
